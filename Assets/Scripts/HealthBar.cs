@@ -3,16 +3,28 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider healthSlider;
+    public Slider energySlider;
 
     public void SetHealth(float health)
     {
-        slider.value = health;
+        healthSlider.value = health;
     }
 
     public void SetMaxHealth(float health)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
+    }
+
+    public void SetEnergy(float energy)
+    {
+        energySlider.value = energy;
+    }
+
+    public void SetMaxEnergy(float energy)
+    {
+        energySlider.maxValue = energy;
+        energySlider.value = energy;
     }
 }
