@@ -55,7 +55,7 @@ namespace DefaultNamespace
             if (currentEnergy < 100)
             {
                 currentEnergy += charge;
-                energyBar.SetEnergy(charge);
+                energyBar.SetEnergy(currentEnergy);
             }
         }
     }
