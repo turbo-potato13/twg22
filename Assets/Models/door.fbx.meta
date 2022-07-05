@@ -1,19 +1,27 @@
 fileFormatVersion: 2
-guid: acf5c8ca3d2531549920ac0cc1845d7a
+guid: 2ade0c0f666420d4e85bdf0f891d6244
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Proem
+    second: {fileID: 2100000, guid: fadd2125938efec4b81eb7983b02d31d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Svet
+    second: {fileID: 2100000, guid: 0297ab56d22b4184da205f48779f6050, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: basa
     second: {fileID: 2100000, guid: 363f29bf96ecdfe47a5ae876b24ea778, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: glass
-    second: {fileID: 2100000, guid: 7dabc67e8a226eb458f9ac577b4b6a8d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
