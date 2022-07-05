@@ -7,6 +7,8 @@ public class PatrolBehavior : StateMachineBehaviour
     private float timer;
     private List<Transform> points = new List<Transform>();
     private NavMeshAgent agent;
+    private Transform player;
+    private float chaseRange;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,19 +21,26 @@ public class PatrolBehavior : StateMachineBehaviour
 
         agent = animator.GetComponent<NavMeshAgent>();
         agent.SetDestination(points[0].position);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // if (agent.remainingDistance <= agent.stoppingDistance)
         // {
-            agent.SetDestination(points[Random.Range(0, points.Count)].position);
+        agent.SetDestination(points[Random.Range(0, points.Count)].position);
         // }
 
         timer += Time.deltaTime;
         if (timer > 7)
         {
             animator.SetBool("IsPatroling", false);
+        }
+
+        float distance = Vector3.Distance(animator.transform.position, player.position);
+        if (distance < chaseRange)
+        {
+            animator.SetBool("IsChasing", true);
         }
     }
 

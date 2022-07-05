@@ -1,29 +1,21 @@
 using UnityEngine;
 
-public class IdleBehavior : StateMachineBehaviour
+public class AttackBehaviour : StateMachineBehaviour
 {
-    private float timer;
     private Transform player;
-    private float chaseRange = 10;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timer = 0;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        timer += Time.deltaTime;
-        if (timer > 3)
-        {
-            animator.SetBool("IsPatroling", true);
-        }
-
+        animator.transform.LookAt(player);
         float distance = Vector3.Distance(animator.transform.position, player.position);
-        if (distance < chaseRange)
+        if (distance > 3)
         {
-            animator.SetBool("IsChasing", true);
+            animator.SetBool("IsAttacking", false);
         }
     }
 
