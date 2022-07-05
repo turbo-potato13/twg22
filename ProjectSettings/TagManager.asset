@@ -7,11 +7,12 @@ TagManager:
   - Mars
   - Points
   - Enemy
+  - Fire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - MiniMap
   - Water
   - UI
   - 
