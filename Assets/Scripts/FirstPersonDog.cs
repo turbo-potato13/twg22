@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -8,6 +10,8 @@ namespace DefaultNamespace
         public HealthBar healthBar;
         public float currentEnergy;
         public HealthBar energyBar;
+        public Dictionary<String, Int32> items = new Dictionary<string, int>();
+        public ItemCanvas itemCanvas;
 
         private void Start()
         {
@@ -17,6 +21,19 @@ namespace DefaultNamespace
             energyBar.SetMaxEnergy(100f);
             currentEnergy = 100;
             energyBar.SetEnergy(currentEnergy);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.I))
+            {
+                itemCanvas.setCount(items);
+                itemCanvas.transform.gameObject.SetActive(true);
+            }
+            else
+            {
+                itemCanvas.transform.gameObject.SetActive(false);
+            }
         }
 
         public void putDamage(float damage)
@@ -56,6 +73,20 @@ namespace DefaultNamespace
             {
                 currentEnergy += charge;
                 energyBar.SetEnergy(currentEnergy);
+            }
+        }
+
+        public void takeItem(String itemName)
+        {
+            int countItems;
+            if (!items.TryGetValue(itemName, out countItems))
+            {
+                items.Add(itemName, 1);
+            }
+            else
+            {
+                countItems = items[itemName] + 1;
+                items[itemName] = countItems;
             }
         }
     }

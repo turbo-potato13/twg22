@@ -28,19 +28,31 @@ public class LaserGun : MonoBehaviour
     {
         RaycastHit hit;
 
-        GameObject laser = Instantiate(shotPrefab, transform.position, shotPrefab.transform.rotation);
-        ShotBehavior shotBehavior = laser.GetComponent<ShotBehavior>();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, range))
+        {
+            GameObject laser = Instantiate(shotPrefab, transform.position, transform.rotation);
+            laser.GetComponent<ShotBehavior>().setTarget(hit.point);
+            Destroy(laser, 2f);
+        }
+
+        // else
+        // {
+        //     GameObject laser = Instantiate(shotPrefab, transform.parent.position, transform.parent.rotation);
+        //     laser.GetComponent<ShotBehavior>().shotToVoid();
+        //     Destroy(laser, 2f);
+        // }
+
         if (Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range))
         {
-            shotBehavior.setTarget(hit.point);
-            Destroy(laser, 1f);
             Debug.Log(hit.transform.name);
 
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.takeDamage(damage);
-                Destroy(laser);
+                // Destroy(laser);
             }
 
             if (hit.rigidbody != null)

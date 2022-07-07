@@ -7,9 +7,7 @@ public class ShotBehavior : MonoBehaviour
 
     void Update()
     {
-        // transform.rotation = new Quaternion(0, 0, 0 ,0);
-        transform.position +=
-            transform.forward * Time.deltaTime * 300f; // The step size is equal to speed times frame time.
+        // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
         float step = speed * Time.deltaTime;
 
         if (m_target != null)
@@ -17,10 +15,10 @@ public class ShotBehavior : MonoBehaviour
             if (transform.position == m_target)
             {
                 Destroy(gameObject);
+                return;
             }
-
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
-            Destroy(gameObject, 1f);
+            // 
         }
     }
 
@@ -28,4 +26,10 @@ public class ShotBehavior : MonoBehaviour
     {
         m_target = target;
     }
+
+    public void shotToVoid()
+    {
+        transform.position += transform.forward * Time.deltaTime * 300f;
+        
+    } 
 }
