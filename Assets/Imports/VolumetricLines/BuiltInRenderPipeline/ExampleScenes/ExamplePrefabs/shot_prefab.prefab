@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 11489952}
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
+  - component: {fileID: -6293776762585004050}
+  - component: {fileID: -5695349094084206880}
   m_Layer: 0
   m_Name: shot_prefab
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb039d3a64491f4ebfc852d25b5ee70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 3000
+  lifespan: 3
+  damage: 35
+  impactEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+  impactForce: 30
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0
@@ -180,3 +186,32 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!54 &-6293776762585004050
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-5695349094084206880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.43405, y: 6.7968235, z: 53.80817}
+  m_Center: {x: -0.18286267, y: 0.5763382, z: 26.404074}

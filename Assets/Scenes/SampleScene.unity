@@ -6503,6 +6503,14 @@ PrefabInstance:
       propertyPath: InitialModule.startSizeZ.minMaxState
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3555374836371491979, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Name
+      value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689767612686135743, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Name
+      value: ACTUAL GUN
+      objectReference: {fileID: 0}
     - target: {fileID: 5791193825821527468, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -7012,8 +7020,6 @@ MonoBehaviour:
   damage: 35
   range: 100
   FPSCamera: {fileID: 317371111}
-  impactEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
-  impactForce: 30
   shootRate: 1
   shotPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
 --- !u!1 &895282865

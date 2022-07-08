@@ -8,6 +8,7 @@ TagManager:
   - Points
   - Enemy
   - Fire
+  - Shot
   layers:
   - Default
   - TransparentFX

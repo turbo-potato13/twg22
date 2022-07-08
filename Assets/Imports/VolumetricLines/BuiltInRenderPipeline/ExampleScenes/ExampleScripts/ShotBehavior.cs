@@ -2,34 +2,35 @@
 
 public class ShotBehavior : MonoBehaviour
 {
-    private Vector3 m_target;
-    public float speed;
+    private Rigidbody rigidBody;
 
-    void Update()
+    public float speed = 300f;
+    public float lifespan = 3f;
+    public float damage;
+    public GameObject impactEffect;
+    public float impactForce = 30f;
+
+    void OnTriggerEnter(Collider other)
     {
-        // transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
-        float step = speed * Time.deltaTime;
-
-        if (m_target != null)
+        if (other.gameObject.tag == "Enemy")
         {
-            if (transform.position == m_target)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            transform.position = Vector3.MoveTowards(transform.position, m_target, step);
-            // 
+            other.gameObject.GetComponent<Enemy>().takeDamage(damage);
+            other.attachedRigidbody.AddForce(transform.forward * impactForce);
         }
+        GameObject impactGo = Instantiate(impactEffect, transform.position, transform.rotation);
+
+        Destroy(impactGo, 2f);
+        Destroy(gameObject);
     }
 
-    public void setTarget(Vector3 target)
+    void Awake()
     {
-        m_target = target;
+        rigidBody = GetComponent<Rigidbody>();
     }
 
-    public void shotToVoid()
+    public void Start()
     {
-        transform.position += transform.forward * Time.deltaTime * 300f;
-        
+        rigidBody.AddForce(rigidBody.transform.forward * speed);
+        Destroy(gameObject, lifespan);
     } 
 }
