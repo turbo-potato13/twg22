@@ -41,10 +41,10 @@ public class ItemCanvas : MonoBehaviour
 
         int sunPanelBrokenCount = 0;
         items.TryGetValue(Item.ItemType.SunPanelBroke, out sunPanelBrokenCount);
-        sunPanelBrokenCountText.text = "Солнечные\n батареи (слом): " + sunPanelBrokenCount + " шт.";
+        sunPanelBrokenCountText.text = "Солнечные\n панели(слом):\n" + sunPanelBrokenCount + " шт.";
 
         int sunPanelCount = 0;
         items.TryGetValue(Item.ItemType.SunPanel, out sunPanelCount);
-        sunPanelCountText.text = "Солнечные батареи: " + sunPanelCount + " шт.";
+        sunPanelCountText.text = "Солнечные\n панели:\n" + sunPanelCount + " шт.";
     }
 }
