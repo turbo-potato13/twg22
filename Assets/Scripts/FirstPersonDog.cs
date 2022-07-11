@@ -10,9 +10,8 @@ namespace DefaultNamespace
         public HealthBar healthBar;
         public float currentEnergy;
         public HealthBar energyBar;
-        public Dictionary<String, Int32> items = new Dictionary<string, int>();
-        public ItemCanvas itemCanvas;
-
+        public Dictionary<Item.ItemType, Int32> inventory = new Dictionary<Item.ItemType, int>();
+       
         private void Start()
         {
             healthBar.SetMaxHealth(100f);
@@ -22,20 +21,7 @@ namespace DefaultNamespace
             currentEnergy = 100;
             energyBar.SetEnergy(currentEnergy);
         }
-
-        private void Update()
-        {
-            if (Input.GetKey(KeyCode.I))
-            {
-                itemCanvas.setCount(items);
-                itemCanvas.transform.gameObject.SetActive(true);
-            }
-            else
-            {
-                itemCanvas.transform.gameObject.SetActive(false);
-            }
-        }
-
+        
         public void putDamage(float damage)
         {
             if (currentHealth > 0)
@@ -76,17 +62,37 @@ namespace DefaultNamespace
             }
         }
 
-        public void takeItem(String itemName)
+        public void takeItem(Item item)
         {
             int countItems;
-            if (!items.TryGetValue(itemName, out countItems))
+            if (!inventory.TryGetValue(item.itemType, out countItems))
             {
-                items.Add(itemName, 1);
+                inventory.Add(item.itemType, 1);
             }
             else
             {
-                countItems = items[itemName] + 1;
-                items[itemName] = countItems;
+                countItems = inventory[item.itemType] + 1;
+                inventory[item.itemType] = countItems;
+            }
+        }
+
+        public bool tryGetItem(Item item)
+        {
+            int countItems;
+            return inventory.TryGetValue(item.itemType, out countItems);
+        }
+        
+        public void removeItem(Item item)
+        {
+            int countItems;
+            if (!inventory.TryGetValue(item.itemType, out countItems))
+            {
+                inventory.Add(item.itemType, 0);
+            }
+            else
+            {
+                countItems = inventory[item.itemType] - 1;
+                inventory[item.itemType] = countItems;
             }
         }
     }

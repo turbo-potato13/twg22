@@ -1,12 +1,12 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
     public class ItemForCraft : MonoBehaviour
     {
         public FirstPersonDog firstPerson;
-        public String itemName;
+        public Item.ItemType itemType;
+        public int itemAmount = 1;
 
         private void Update()
         {
@@ -14,7 +14,8 @@ namespace DefaultNamespace
 
             if (Input.GetKeyDown(KeyCode.E) && distance < 2)
             {
-                firstPerson.takeItem(itemName);
+                Item item = new Item {itemType = itemType, amount = itemAmount};
+                firstPerson.takeItem(item);
                 Destroy(gameObject);
             }
         }

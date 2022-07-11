@@ -5,6 +5,7 @@ public class LifeStation : MonoBehaviour
 {
     public FirstPersonDog firstDog;
 
+
     private void OnTriggerEnter(Collider other)
     {
         CancelInvoke("takeDamage");

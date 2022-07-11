@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,38 +13,38 @@ public class ItemCanvas : MonoBehaviour
     public TMP_Text sunPanelBrokenCountText;
     public TMP_Text sunPanelCountText;
 
-    public void setCount(Dictionary<String, int> items)
+    public void setCount(Dictionary<Item.ItemType, int> items)
     {
         int metalCount = 0;
-        items.TryGetValue("металл", out metalCount);
+        items.TryGetValue(Item.ItemType.Metal, out metalCount);
         metalCountText.text = "Металл: " + metalCount + " шт.";
 
         int coalCount = 0;
-        items.TryGetValue("уголь", out coalCount);
+        items.TryGetValue(Item.ItemType.Coal, out coalCount);
         coalCountText.text = "Уголь: " + coalCount + " шт.";
 
         int soilCount = 0;
-        items.TryGetValue("почва", out soilCount);
+        items.TryGetValue(Item.ItemType.Soil, out soilCount);
         soilCountText.text = "Почва: " + soilCount + " шт.";
 
         int waterCount = 0;
-        items.TryGetValue("вода", out waterCount);
+        items.TryGetValue(Item.ItemType.Water, out waterCount);
         waterCountText.text = "Вода: " + waterCount + " шт.";
 
         int semenCount = 0;
-        items.TryGetValue("семена", out semenCount);
+        items.TryGetValue(Item.ItemType.Semen, out semenCount);
         semenCountText.text = "Семена: " + semenCount + " шт.";
 
         int filterCount = 0;
-        items.TryGetValue("фильтр", out filterCount);
+        items.TryGetValue(Item.ItemType.Filter, out filterCount);
         filterCountText.text = "Фильтр: " + filterCount + " шт.";
 
         int sunPanelBrokenCount = 0;
-        items.TryGetValue("солнечныеХ", out sunPanelBrokenCount);
+        items.TryGetValue(Item.ItemType.SunPanelBroke, out sunPanelBrokenCount);
         sunPanelBrokenCountText.text = "Солнечные\n батареи (слом): " + sunPanelBrokenCount + " шт.";
 
         int sunPanelCount = 0;
-        items.TryGetValue("солнечные", out sunPanelCount);
+        items.TryGetValue(Item.ItemType.SunPanel, out sunPanelCount);
         sunPanelCountText.text = "Солнечные батареи: " + sunPanelCount + " шт.";
     }
 }
