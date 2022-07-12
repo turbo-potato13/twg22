@@ -10,7 +10,10 @@ namespace DefaultNamespace
 
         private void OnTriggerEnter(Collider other)
         {
-            firstPerson.putDamage(damageCount);
+            if (other.gameObject.tag == "Player")
+            {
+                firstPerson.putDamage(damageCount);
+            }
         }
     }
 }
