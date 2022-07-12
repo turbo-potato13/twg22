@@ -9,6 +9,7 @@ namespace DefaultNamespace
         public ItemCanvas itemCanvas;
         public Transform craft;
         public bool nearCraft;
+        private FirstPersonController firstPersonController;
 
         private void Awake()
         {
@@ -16,6 +17,8 @@ namespace DefaultNamespace
             {
                 firstDog = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
             }
+
+            firstPersonController = firstDog.transform.GetComponent<FirstPersonController>();
         }
 
         void OnGUI()
@@ -45,8 +48,8 @@ namespace DefaultNamespace
         {
             if (Input.GetKey(KeyCode.F))
             {
-                Time.timeScale = 0f;
-                firstDog.gameObject.GetComponent<FirstPersonController>().m_MouseLook.setLock(true);
+                Time.timeScale = 0.1f;
+                firstPersonController.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 activateCanvas();
@@ -55,6 +58,7 @@ namespace DefaultNamespace
             if (Input.GetKey(KeyCode.Space))
             {
                 Time.timeScale = 1f;
+                firstPersonController.enabled = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 disActivateCanvas();
