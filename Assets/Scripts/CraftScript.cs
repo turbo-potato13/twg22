@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 namespace DefaultNamespace
 {
@@ -36,11 +37,18 @@ namespace DefaultNamespace
         {
             if (Input.GetKey(KeyCode.F))
             {
+                Time.timeScale = 0f;
+                firstDog.gameObject.GetComponent<FirstPersonController>().m_MouseLook.setLock(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 activateCanvas();
             }
 
             if (Input.GetKey(KeyCode.Space))
             {
+                Time.timeScale = 1f;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 disActivateCanvas();
             }
         }

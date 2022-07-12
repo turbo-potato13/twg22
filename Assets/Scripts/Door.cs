@@ -21,4 +21,13 @@ public class Door : MonoBehaviour
             GetComponent<Animator>().SetBool("IsOpen", false);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GetComponent<Animator>().SetBool("IsOpen", true);
+
+        }
+    }
 }
