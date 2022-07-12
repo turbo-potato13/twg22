@@ -16,7 +16,8 @@ public class Item : MonoBehaviour
         SunPanel = 7,
         SunPanelBroke = 8,
         Light = 9,
-        Garden = 10
+        Garden = 10,
+        FunModule = 11,
     }
 
     public ItemType itemType;

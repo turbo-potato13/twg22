@@ -18,7 +18,7 @@ namespace DefaultNamespace
         {
             float distance = Vector3.Distance(transform.position, firstPerson.transform.position);
 
-            if (Input.GetKeyDown(KeyCode.E) && distance < 2)
+            if (Input.GetKeyDown(KeyCode.E) && distance < 5)
             {
                 Item item = new Item {itemType = itemType, amount = itemAmount};
                 firstPerson.takeItem(item);
