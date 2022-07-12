@@ -55,7 +55,7 @@ namespace DefaultNamespace
                 activateCanvas();
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Escape))
             {
                 Time.timeScale = 1f;
                 firstPersonController.enabled = true;
