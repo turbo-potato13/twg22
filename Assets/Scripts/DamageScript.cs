@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -7,6 +8,14 @@ namespace DefaultNamespace
         public float damageCount = 5;
 
         public FirstPersonDog firstPerson;
+
+        private void Awake()
+        {
+            if (firstPerson == null)
+            {
+                firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+            }
+        }
 
         private void OnTriggerEnter(Collider other)
         {

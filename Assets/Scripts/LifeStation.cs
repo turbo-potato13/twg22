@@ -5,6 +5,13 @@ public class LifeStation : MonoBehaviour
 {
     public FirstPersonDog firstDog;
 
+    private void Awake()
+    {
+        if (firstDog == null)
+        {
+            firstDog = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

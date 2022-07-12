@@ -10,6 +10,14 @@ namespace DefaultNamespace
         public Transform craft;
         public bool nearCraft;
 
+        private void Awake()
+        {
+            if (firstDog == null)
+            {
+                firstDog = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+            }
+        }
+
         void OnGUI()
         {
             if (Input.GetKey(KeyCode.I) || nearCraft)

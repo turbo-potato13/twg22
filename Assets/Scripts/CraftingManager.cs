@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
@@ -16,6 +17,14 @@ public class CraftingManager : MonoBehaviour
     public Slot resultSlot;
 
     public FirstPersonDog firstPerson;
+
+    private void Awake()
+    {
+        if (firstPerson == null)
+        {
+            firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+        }
+    }
 
     private void Update()
     {

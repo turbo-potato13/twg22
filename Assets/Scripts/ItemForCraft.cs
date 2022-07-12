@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -7,6 +8,11 @@ namespace DefaultNamespace
         public FirstPersonDog firstPerson;
         public Item.ItemType itemType;
         public int itemAmount = 1;
+
+        private void Awake()
+        {
+            firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+        }
 
         private void Update()
         {
