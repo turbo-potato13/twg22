@@ -18,4 +18,5 @@ public class ItemAssets : MonoBehaviour
     public Sprite sunPanelBrokenSprite;
     public Sprite sunPanelSprite;
     public Sprite gardenSprite;
+    public Sprite gunSprite;
 }

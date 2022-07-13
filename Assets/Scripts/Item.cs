@@ -18,6 +18,7 @@ public class Item : MonoBehaviour
         Light = 9,
         Garden = 10,
         FunModule = 11,
+        Gun = 12,
     }
 
     public ItemType itemType;
@@ -38,6 +39,7 @@ public class Item : MonoBehaviour
             case ItemType.SunPanel: return ItemAssets.instance.sunPanelSprite;
             case ItemType.SunPanelBroke: return ItemAssets.instance.sunPanelBrokenSprite;
             case ItemType.Garden: return ItemAssets.instance.gardenSprite;
+            case ItemType.Gun: return ItemAssets.instance.gunSprite;
         }
 
         return null;

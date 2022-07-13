@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
@@ -84,7 +83,7 @@ public class CraftingManager : MonoBehaviour
             }
             else
             {
-                currentRecipe *= 0;
+                currentRecipe += 42;
             }
         }
 
@@ -95,7 +94,7 @@ public class CraftingManager : MonoBehaviour
             if (recipes[i] == currentRecipe)
             {
                 resultSlot.gameObject.SetActive(true);
-                resultSlot.SetImage(recipeResults[0]);
+                resultSlot.SetImage(recipeResults[i]);
                 resultSlot.item = recipeResults[i];
             }
         }
@@ -116,6 +115,11 @@ public class CraftingManager : MonoBehaviour
             if ((int) slot.item.itemType < 9)
             {
                 firstPerson.takeItem(slot.item);
+            }
+
+            if ((int) slot.item.itemType == 12)
+            {
+                firstPerson.activateGun();
             }
 
             OnClickSlot(slot);

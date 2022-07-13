@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -14,7 +13,9 @@ namespace DefaultNamespace
         public HealthBar energyBar;
         public Dictionary<Item.ItemType, Int32> inventory;
         public TMP_Text helpText;
-       
+        public GameObject Gun;
+        public GameObject Muzzle;
+
         private void Start()
         {
             inventory = new Dictionary<Item.ItemType, int>();
@@ -26,7 +27,7 @@ namespace DefaultNamespace
             currentEnergy = 100;
             energyBar.SetEnergy(currentEnergy);
         }
-        
+
         public void putDamage(float damage)
         {
             if (currentHealth > 0)
@@ -86,7 +87,7 @@ namespace DefaultNamespace
             int countItems;
             return inventory.TryGetValue(item.itemType, out countItems);
         }
-        
+
         public void removeItem(Item item)
         {
             int countItems;
@@ -99,6 +100,12 @@ namespace DefaultNamespace
                 countItems = inventory[item.itemType] - 1;
                 inventory[item.itemType] = countItems;
             }
+        }
+
+        public void activateGun()
+        {
+            Gun.SetActive(true);
+            Muzzle.SetActive(true);
         }
     }
 }
