@@ -14,6 +14,7 @@ public class CraftingManager : MonoBehaviour
     public List<int> recipes;
     public Item[] recipeResults;
     public Slot resultSlot;
+    public GameObject garden;
 
     public FirstPersonDog firstPerson;
 
@@ -122,6 +123,11 @@ public class CraftingManager : MonoBehaviour
                 firstPerson.activateGun();
             }
 
+            if ((int) slot.item.itemType == 10)
+            {
+                garden.SetActive(true);
+            }
+            
             OnClickSlot(slot);
             refreshSlots();
         }

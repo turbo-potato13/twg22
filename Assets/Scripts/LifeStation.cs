@@ -1,9 +1,15 @@
 using DefaultNamespace;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class LifeStation : MonoBehaviour
 {
     public FirstPersonDog firstDog;
+    public GameObject Dog;
+    public GameObject Spaceman;
+    private FirstPersonController firstPersonController;
+
+    int charOn = 1;
 
     private void Awake()
     {
@@ -11,6 +17,7 @@ public class LifeStation : MonoBehaviour
         {
             firstDog = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
         }
+        firstPersonController = firstDog.transform.GetComponent<FirstPersonController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +34,13 @@ public class LifeStation : MonoBehaviour
         InvokeRepeating("takeDamage", .5f, 1f);
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SwitchCharecter();
+        }
+    }
 
     //Время нахождения на Марсе можно высчитывать по формуле t * d = 100, где t время которое за которое разряжается, d - дамаг который нужен для этого
     //0.833f - дамаг для нахождения 3мин, 1.66f - 2мин
@@ -43,5 +57,29 @@ public class LifeStation : MonoBehaviour
     {
         firstDog.putHealth(1f);
         firstDog.putCharge(2f);
+    }
+
+    public void SwitchCharecter()
+    {
+    //     switch (charOn)
+    //     {
+    //         case 1:
+    //             charOn = 2;
+    //             Dog.SetActive(false);
+    //             Spaceman.SetActive(true);
+    //             firstPersonController.m_CharacterController.Move(Dog.transform.localPosition);
+    //             firstPersonController.m_PreviouslyGrounded = true;
+    //
+    //             // firstDog.transform.SetPositionAndRotation(Dog.transform.position, Dog.transform.rotation);
+    //             break;
+    //         case 2:
+    //             charOn = 1;
+    //             Dog.SetActive(true);
+    //             Spaceman.SetActive(false);
+    //             firstPersonController.m_CharacterController.Move(Spaceman.transform.localPosition);
+    //             firstPersonController.m_PreviouslyGrounded = true;
+    //             // firstDog.transform.SetPositionAndRotation(Spaceman.transform.position, Spaceman.transform.rotation);
+    //             break;
+    //     }
     }
 }
