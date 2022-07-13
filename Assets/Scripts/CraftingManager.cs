@@ -84,9 +84,11 @@ public class CraftingManager : MonoBehaviour
             }
             else
             {
-                currentRecipe += 0;
+                currentRecipe *= 0;
             }
         }
+
+        currentRecipe *= 10;
 
         for (int i = 0; i < recipes.Count; i++)
         {

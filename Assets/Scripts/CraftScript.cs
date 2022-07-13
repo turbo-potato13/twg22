@@ -36,11 +36,13 @@ namespace DefaultNamespace
 
         private void OnTriggerEnter(Collider other)
         {
+            firstDog.helpText.text = "Нажмите F для создания предметов";
             nearCraft = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
+            firstDog.helpText.text = "";
             nearCraft = false;
         }
 
@@ -48,6 +50,7 @@ namespace DefaultNamespace
         {
             if (Input.GetKey(KeyCode.F))
             {
+                firstDog.helpText.text = "Нажмите esc чтобы выйти из режима создания предметов";
                 Time.timeScale = 0.1f;
                 firstPersonController.enabled = false;
                 Cursor.lockState = CursorLockMode.None;
@@ -57,6 +60,7 @@ namespace DefaultNamespace
 
             if (Input.GetKey(KeyCode.Escape))
             {
+                firstDog.helpText.text = "Нажмите F для создания предметов";
                 Time.timeScale = 1f;
                 firstPersonController.enabled = true;
                 Cursor.lockState = CursorLockMode.Locked;

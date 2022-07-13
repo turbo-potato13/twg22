@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 namespace DefaultNamespace
 {
@@ -10,10 +12,13 @@ namespace DefaultNamespace
         public HealthBar healthBar;
         public float currentEnergy;
         public HealthBar energyBar;
-        public Dictionary<Item.ItemType, Int32> inventory = new Dictionary<Item.ItemType, int>();
+        public Dictionary<Item.ItemType, Int32> inventory;
+        public TMP_Text helpText;
        
         private void Start()
         {
+            inventory = new Dictionary<Item.ItemType, int>();
+            helpText.text = "";
             healthBar.SetMaxHealth(100f);
             currentHealth = 100;
             healthBar.SetHealth(currentHealth);

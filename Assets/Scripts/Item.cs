@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
             case ItemType.Filter: return ItemAssets.instance.filterSprite;
             case ItemType.SunPanel: return ItemAssets.instance.sunPanelSprite;
             case ItemType.SunPanelBroke: return ItemAssets.instance.sunPanelBrokenSprite;
+            case ItemType.Garden: return ItemAssets.instance.gardenSprite;
         }
 
         return null;

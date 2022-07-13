@@ -17,4 +17,5 @@ public class ItemAssets : MonoBehaviour
     public Sprite filterSprite;
     public Sprite sunPanelBrokenSprite;
     public Sprite sunPanelSprite;
+    public Sprite gardenSprite;
 }
