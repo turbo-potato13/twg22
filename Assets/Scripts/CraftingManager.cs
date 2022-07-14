@@ -15,6 +15,7 @@ public class CraftingManager : MonoBehaviour
     public Item[] recipeResults;
     public Slot resultSlot;
     public GameObject garden;
+    public TaskManager taskManager;
 
     public FirstPersonDog firstPerson;
 
@@ -120,14 +121,16 @@ public class CraftingManager : MonoBehaviour
 
             if ((int) slot.item.itemType == 12)
             {
+                firstPerson.takeItem(slot.item);
                 firstPerson.activateGun();
             }
 
             if ((int) slot.item.itemType == 10)
             {
+                firstPerson.takeItem(slot.item);
                 garden.SetActive(true);
             }
-            
+            checkTask(slot.item);
             OnClickSlot(slot);
             refreshSlots();
         }
@@ -147,5 +150,41 @@ public class CraftingManager : MonoBehaviour
         {
             OnClickSlot(slot);
         }
+    }
+
+    public void checkTask(Item item)
+    {
+        int count = 0;
+        firstPerson.inventory.TryGetValue(item.itemType, out count);
+        if (item.itemType == Item.ItemType.Gun && count > 0)
+        {
+            taskManager.successTask(0);
+            Invoke("successText", 3);
+            taskManager.enableAllTasks();
+        }
+
+        if (item.itemType == Item.ItemType.Filter && count >= 5)
+        {
+            taskManager.successTask(1);
+            Invoke("successText", 3);
+        }
+
+        if (item.itemType == Item.ItemType.SunPanel && count >= 4)
+        {
+            taskManager.successTask(2);
+            Invoke("successText", 3);
+        }
+
+        if (item.itemType == Item.ItemType.Garden && count > 0)
+        {
+            taskManager.successTask(3);
+            Invoke("successText", 3);
+        }
+        
+    }
+
+    public void successText()
+    {
+       firstPerson.TaskText.text = "Вы выполнили задание";
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Fire
   - Shot
+  - Canvas
   layers:
   - Default
   - TransparentFX

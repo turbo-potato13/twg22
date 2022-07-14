@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -8,9 +7,12 @@ namespace DefaultNamespace
         public FirstPersonDog firstPerson;
         public Item.ItemType itemType;
         public int itemAmount = 1;
+        public TaskManager taskManager;
+
         private void Awake()
         {
             firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+            taskManager = GameObject.FindGameObjectWithTag("Canvas").GetComponent<TaskManager>();
         }
 
 
@@ -19,6 +21,13 @@ namespace DefaultNamespace
             float distance = Vector3.Distance(transform.position, firstPerson.transform.position);
             if (Input.GetKeyDown(KeyCode.E) && distance < 5)
             {
+                if (itemType == Item.ItemType.FunModule)
+                {
+                    Debug.Log("FUUUUUUUN");
+                    taskManager.enableBonusTask();
+                    Invoke("enableBonusText", 3);
+                }
+
                 Item item = new Item {itemType = itemType, amount = itemAmount};
                 firstPerson.takeItem(item);
                 Destroy(gameObject);
@@ -40,7 +49,12 @@ namespace DefaultNamespace
             {
                 firstPerson.helpText.text = "";
             }
-            
+        }
+
+        private void enableBonusText()
+        {
+            firstPerson.TaskText.text =
+                "Вы выполнили бонусное задание!/n Модуль с музыкой, фильмами и играми/nТеперь будет чем заняться!";
         }
     }
 }

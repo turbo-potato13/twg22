@@ -31,4 +31,24 @@ public class TaskManager : MonoBehaviour
            tasks.SetActive(false);
         }
     }
+
+    public void successTask(int taskNumber)
+    {
+        tasksList[taskNumber].image.gameObject.SetActive(true);        
+    }
+
+    public void enableAllTasks()
+    {
+        for (int i = 1; i < (tasksList.Count-1); i++)
+        {
+            tasksList[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void enableBonusTask()
+    {
+        int i = tasksList.Count - 1;
+        tasksList[i].gameObject.SetActive(true);
+        successTask(i);
+    }
 }

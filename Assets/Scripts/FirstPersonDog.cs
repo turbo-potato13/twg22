@@ -15,6 +15,7 @@ namespace DefaultNamespace
         public TMP_Text helpText;
         public GameObject Gun;
         public GameObject Muzzle;
+        public TMP_Text TaskText;
 
         private void Start()
         {
