@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: 8d170ca73d7bdfe40b96995eef8e0af9, type: 2}
+    second: {fileID: 2100000, guid: ec2e4798af74ae349a1c034c1d7e5176, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -29,7 +29,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -84,8 +84,263 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ULL
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ULL.001
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LLL
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LLL.001
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FL
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: FL.001
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.003
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.004
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.005
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.006
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.007
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hips.008
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: monstr(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: monstr(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hips
+      parentName: Armature
+      position: {x: 0.000086301116, y: -5.9604643e-10, z: 0.006531706}
+      rotation: {x: 0.7071069, y: 0.00000071525574, z: 0.00000047683716, w: 0.70710665}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: l
+      parentName: Hips
+      position: {x: -0, y: 5.9604643e-10, z: 0}
+      rotation: {x: 0.040897314, y: 0.043676324, z: 0.72863734, w: 0.682281}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ULL
+      parentName: l
+      position: {x: -2.6399788e-10, y: 0.005147463, z: 4.6566126e-11}
+      rotation: {x: -0.043676335, y: 0.040897347, z: 0.68228126, w: 0.72863716}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: LLL
+      parentName: ULL
+      position: {x: 2.8004044e-11, y: 0.002545753, z: -3.5357299e-12}
+      rotation: {x: -4.656826e-10, y: 0.00000000322924, z: -0.00000022887251, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: FL
+      parentName: LLL
+      position: {x: 4.6423206e-11, y: 0.0029376543, z: -1.3962555e-11}
+      rotation: {x: 0.2937169, y: 4.741718e-10, z: -0.0000000220293, w: 0.95589244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FL_end
+      parentName: FL
+      position: {x: -0, y: 0.0028249165, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: r
+      parentName: Hips
+      position: {x: -0, y: 5.9604643e-10, z: 0}
+      rotation: {x: 0.042255916, y: -0.045230728, z: -0.7293275, w: 0.68135893}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ULL.001
+      parentName: r
+      position: {x: 4.7515486e-10, y: 0.0049765203, z: 1.8626451e-11}
+      rotation: {x: -0.045230716, y: -0.042255886, z: -0.6813588, w: 0.7293277}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: LLL.001
+      parentName: ULL.001
+      position: {x: 2.7240077e-11, y: 0.0025457526, z: -1.8746291e-11}
+      rotation: {x: 9.313029e-10, y: 0.0000000032292422, z: -0.00000022893074, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FL.001
+      parentName: LLL.001
+      position: {x: 4.642301e-11, y: 0.0029376543, z: -1.0963319e-12}
+      rotation: {x: 0.29371697, y: 4.7416165e-10, z: -0.000000022029337, w: 0.95589244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FL.001_end
+      parentName: FL.001
+      position: {x: -0, y: 0.0028249165, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: Hips
+      position: {x: -0, y: 0.0018503349, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Spine
+      position: {x: -0, y: 0.014815971, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head_end
+      parentName: Head
+      position: {x: -0, y: 0.014533546, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips.001
+      parentName: Spine
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.000000029450128, y: -0.0000000030920062, z: 0.18432277, w: 0.9828658}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips.003
+      parentName: Hips.001
+      position: {x: -0.00000002142042, y: 0.012392745, z: -0.000000029070767}
+      rotation: {x: -0.00000006020369, y: 0.000000029529783, z: 0.58338314, w: 0.8121971}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Hips.004
+      parentName: Hips.003
+      position: {x: -0.0000001626322, y: 0.0058230613, z: 4.52202e-10}
+      rotation: {x: 0.024022868, y: 0.007100083, z: -0.00520715, w: 0.9996727}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: Hips.005
+      parentName: Hips.004
+      position: {x: 0.000000003117872, y: 0.005669616, z: 3.7252902e-11}
+      rotation: {x: 0.0026723274, y: 0.0009538513, z: 0.018055955, w: 0.999833}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Hips.005_end
+      parentName: Hips.005
+      position: {x: -0, y: 0.00485716, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips.002
+      parentName: Spine
+      position: {x: -0.00005983144, y: 0.00004206538, z: -9.747779e-12}
+      rotation: {x: 0.000000030539073, y: -0.0000000048487196, z: -0.19331126, w: 0.9811375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hips.006
+      parentName: Hips.002
+      position: {x: 2.9802322e-10, y: 0.012392862, z: 8.805657e-17}
+      rotation: {x: 0.00000008747527, y: 0.0000000031412148, z: -0.5443519, w: 0.83885705}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Hips.007
+      parentName: Hips.006
+      position: {x: 6.891787e-10, y: 0.005209876, z: -1.3322676e-17}
+      rotation: {x: 0.000000006935053, y: 2.5972627e-10, z: -0.047772165, w: 0.9988583}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Hips.008
+      parentName: Hips.007
+      position: {x: -6.705522e-10, y: 0.0050421217, z: 9.5479175e-17}
+      rotation: {x: 0.0000000011244619, y: -0.00000011969644, z: -0.043834455, w: 0.9990388}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Hips.008_end
+      parentName: Hips.008
+      position: {x: -0, y: 0.004669312, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: monstr(Clone)
+      position: {x: -0, y: 0, z: -0.6238346}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -96,13 +351,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0

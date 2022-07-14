@@ -11,9 +11,11 @@ public class AttackBehaviour : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //animator.transform.rotation = Quaternion.LookRotation(player.transform.position - animator.transform.position);
         animator.transform.LookAt(player);
+        //animator.transform.rotation = Quaternion.Euler(0, animator.transform.rotation.y, 0);
         float distance = Vector3.Distance(animator.transform.position, player.position);
-        if (distance > 10)
+        if (distance > 1)
         {
             animator.SetBool("IsAttacking", false);
         }
