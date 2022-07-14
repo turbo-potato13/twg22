@@ -25,7 +25,9 @@ namespace DefaultNamespace
                 {
                     Debug.Log("FUUUUUUUN");
                     taskManager.enableBonusTask();
-                    Invoke("enableBonusText", 3);
+                    firstPerson.TaskText.gameObject.SetActive(true);
+                    firstPerson.TaskText.text = "Вы выполнили бонусное задание!\n Найден модуль с развлечениями!";
+                    Invoke("disableText", 2);
                 }
 
                 Item item = new Item {itemType = itemType, amount = itemAmount};
@@ -51,10 +53,9 @@ namespace DefaultNamespace
             }
         }
 
-        private void enableBonusText()
+        private void disableText()
         {
-            firstPerson.TaskText.text =
-                "Вы выполнили бонусное задание!/n Модуль с музыкой, фильмами и играми/nТеперь будет чем заняться!";
+            firstPerson.TaskText.gameObject.SetActive(false);
         }
     }
 }

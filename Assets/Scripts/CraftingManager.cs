@@ -158,33 +158,36 @@ public class CraftingManager : MonoBehaviour
         firstPerson.inventory.TryGetValue(item.itemType, out count);
         if (item.itemType == Item.ItemType.Gun && count > 0)
         {
-            taskManager.successTask(0);
-            Invoke("successText", 3);
+            enableSuccessTask(0);
             taskManager.enableAllTasks();
         }
 
         if (item.itemType == Item.ItemType.Filter && count >= 5)
         {
-            taskManager.successTask(1);
-            Invoke("successText", 3);
+            enableSuccessTask(1);
         }
 
         if (item.itemType == Item.ItemType.SunPanel && count >= 4)
         {
-            taskManager.successTask(2);
-            Invoke("successText", 3);
+            enableSuccessTask(2);
         }
 
         if (item.itemType == Item.ItemType.Garden && count > 0)
         {
-            taskManager.successTask(3);
-            Invoke("successText", 3);
+            enableSuccessTask(3);
         }
         
     }
 
-    public void successText()
+    private void enableSuccessTask(int taskNumber)
     {
-       firstPerson.TaskText.text = "Вы выполнили задание";
+        taskManager.successTask(taskNumber);
+        firstPerson.TaskText.gameObject.SetActive(true);
+        firstPerson.TaskText.text = "Вы выполнили задание";
+        Invoke("disableText", 2);
+    }
+    private void disableText()
+    {
+        firstPerson.TaskText.gameObject.SetActive(false);
     }
 }

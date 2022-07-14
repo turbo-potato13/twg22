@@ -244,6 +244,7 @@ MonoBehaviour:
   firstPerson: {fileID: 0}
   itemType: 1
   itemAmount: 1
+  taskManager: {fileID: 0}
 --- !u!1001 &927228810143961100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,6 +369,7 @@ MonoBehaviour:
   firstPerson: {fileID: 0}
   itemType: 1
   itemAmount: 1
+  taskManager: {fileID: 0}
 --- !u!1001 &927228810190662369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491,6 +493,7 @@ MonoBehaviour:
   firstPerson: {fileID: 0}
   itemType: 1
   itemAmount: 1
+  taskManager: {fileID: 0}
 --- !u!1001 &927228811251484979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,6 +617,7 @@ MonoBehaviour:
   firstPerson: {fileID: 0}
   itemType: 1
   itemAmount: 1
+  taskManager: {fileID: 0}
 --- !u!1001 &927228811311533972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,7 +726,7 @@ CapsuleCollider:
   m_Radius: 0.06
   m_Height: 2.01
   m_Direction: 1
-  m_Center: {x: -0, y: 0.9526706, z: 0.073797986}
+  m_Center: {x: -0, y: 0.92, z: 0.12}
 --- !u!114 &6934416697363368020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,3 +742,4 @@ MonoBehaviour:
   firstPerson: {fileID: 0}
   itemType: 1
   itemAmount: 1
+  taskManager: {fileID: 0}
