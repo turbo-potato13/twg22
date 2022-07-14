@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 namespace DefaultNamespace
 {
@@ -34,6 +35,9 @@ namespace DefaultNamespace
         {
             if (currentHealth < 1 )
             {
+                gameObject.GetComponent<FirstPersonController>().enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("GameOver");
             }
         }

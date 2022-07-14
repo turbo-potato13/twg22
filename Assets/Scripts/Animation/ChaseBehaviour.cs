@@ -5,13 +5,13 @@ public class ChaseBehaviour : StateMachineBehaviour
 {
     private NavMeshAgent agent;
     private Transform player;
-    private float attackRange = 2;
-    private float chaseRange = 10;
+    private float attackRange = 1;
+    // private float chaseRange = 10;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.speed = 8;
+        agent.speed = 20;
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -25,7 +25,7 @@ public class ChaseBehaviour : StateMachineBehaviour
             animator.SetBool("IsAttacking", true);
         }
 
-        if (distance > 10)
+        if (distance > 20)
         {
             animator.SetBool("IsChasing", false);
         }
@@ -34,6 +34,6 @@ public class ChaseBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent.SetDestination(agent.transform.position);
-        agent.speed = 4;
+        agent.speed = 15;
     }
 }

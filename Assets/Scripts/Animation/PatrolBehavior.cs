@@ -8,7 +8,7 @@ public class PatrolBehavior : StateMachineBehaviour
     private List<Transform> points = new List<Transform>();
     private NavMeshAgent agent;
     private Transform player;
-    private float chaseRange;
+    private float chaseRange = 20;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -32,7 +32,7 @@ public class PatrolBehavior : StateMachineBehaviour
         // }
 
         timer += Time.deltaTime;
-        if (timer > 7)
+        if (timer > 10)
         {
             animator.SetBool("IsPatroling", false);
         }
