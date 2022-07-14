@@ -10,6 +10,7 @@ TagManager:
   - Fire
   - Shot
   - Canvas
+  - Door
   layers:
   - Default
   - TransparentFX

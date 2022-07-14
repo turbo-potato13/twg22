@@ -15,7 +15,9 @@ public class ShotBehavior : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
-            other.attachedRigidbody.AddForce(transform.forward * impactForce);
+        } else if (other.gameObject.tag == "Door" && other.isTrigger)
+        {
+            return;
         }
         GameObject impactGo = Instantiate(impactEffect, transform.position, transform.rotation);
 
