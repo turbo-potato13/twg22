@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace DefaultNamespace
 {
@@ -27,6 +28,14 @@ namespace DefaultNamespace
             energyBar.SetMaxEnergy(100f);
             currentEnergy = 100;
             energyBar.SetEnergy(currentEnergy);
+        }
+
+        private void Update()
+        {
+            if (currentHealth < 1 )
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
 
         public void putDamage(float damage)

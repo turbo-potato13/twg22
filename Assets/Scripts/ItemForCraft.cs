@@ -8,7 +8,7 @@ namespace DefaultNamespace
         public Item.ItemType itemType;
         public int itemAmount = 1;
         public TaskManager taskManager;
-
+        
         private void Awake()
         {
             firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
