@@ -11780,6 +11780,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 469edab27ab6d004d84af2c4a851bd7f, type: 3}
+--- !u!1 &1127284734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3024858993616348136, guid: ead68a2e7afd2cd4a939130894c17da0, type: 3}
+  m_PrefabInstance: {fileID: 3024858993798786695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1127284738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127284734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13, y: 5, z: 11.31}
+  m_Center: {x: 1.9, y: -1.33, z: 0.13}
 --- !u!1 &1188330372
 GameObject:
   m_ObjectHideFlags: 0
@@ -18116,13 +18134,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1247498386992822333, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1247498386992822335, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
     - target: {fileID: 2478300533323992864, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5040539195663400328, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
       propertyPath: m_Name
@@ -18130,7 +18152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040539195663400328, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7934734321178751859, guid: 6903cc78840dfb6459c337fe26a9f028, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18616,6 +18638,10 @@ PrefabInstance:
       propertyPath: itemCanvas
       value: 
       objectReference: {fileID: 2117398203}
+    - target: {fileID: 3024858993616348148, guid: ead68a2e7afd2cd4a939130894c17da0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3024858993616348151, guid: ead68a2e7afd2cd4a939130894c17da0, type: 3}
       propertyPath: Dog
       value: 
@@ -18628,7 +18654,8 @@ PrefabInstance:
       propertyPath: firstDog
       value: 
       objectReference: {fileID: 1479892372}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3024858993616348148, guid: ead68a2e7afd2cd4a939130894c17da0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ead68a2e7afd2cd4a939130894c17da0, type: 3}
 --- !u!1001 &3138832703179419423
 PrefabInstance:
