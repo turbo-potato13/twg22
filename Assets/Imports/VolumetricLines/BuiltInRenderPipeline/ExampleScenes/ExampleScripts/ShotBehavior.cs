@@ -15,7 +15,7 @@ public class ShotBehavior : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Enemy>().takeDamage(damage);
-        } else if (other.gameObject.tag == "Door" && other.isTrigger)
+        } else if (other.isTrigger)
         {
             return;
         }
