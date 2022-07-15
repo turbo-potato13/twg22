@@ -22,7 +22,7 @@ public class Prologue : MonoBehaviour
 
     void Update()
     {
-        if (i >= 4)
+        if (i == 4)
         {
             isEbaka = true;
         }
@@ -48,13 +48,19 @@ public class Prologue : MonoBehaviour
     public void nextScenary()
     {
         i++;
-        if (i > 3)
+        if (i == 3)
         {
             transform.position = new Vector3(123f, 305, 54);
             transform.rotation = new Quaternion(0, 0, 0, 1);
         }
 
         if (i > 7)
+        {
+            isEbaka = false;
+            transform.position = new Vector3(270f, 415f, 104f);
+            transform.rotation = new Quaternion(0.342020094f, 0f, 0f, 0.939692676f);
+        }
+        if (i > 9)
         {
             SceneManager.LoadScene("GameScene");
         }
