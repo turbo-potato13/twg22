@@ -1,4 +1,5 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
 
 public class LaserGun : MonoBehaviour
@@ -10,17 +11,18 @@ public class LaserGun : MonoBehaviour
     public float shootRate;
     private float shotRateTimeStamp;
     public GameObject shotPrefab;
+    public FirstPersonDog player;
 
-
-    // public void Awake()
-    // {
-    //     throw new NotImplementedException();
-    // }
+    public void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
+    }
 
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            player.putDischarge(0.3f);
             shoot();
             
         }
