@@ -5,8 +5,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class LifeStation : MonoBehaviour
 {
     public FirstPersonDog firstDog;
-    public GameObject Dog;
-    public GameObject Spaceman;
     private FirstPersonController firstPersonController;
 
     int charOn = 1;
