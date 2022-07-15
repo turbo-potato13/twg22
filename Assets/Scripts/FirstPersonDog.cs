@@ -33,7 +33,7 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            if (currentHealth < 1)
+            if (currentHealth < 1 || transform.position.y < -170)
             {
                 gameObject.GetComponent<FirstPersonController>().enabled = false;
                 Cursor.lockState = CursorLockMode.None;
