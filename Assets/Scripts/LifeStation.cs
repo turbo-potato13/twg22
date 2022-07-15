@@ -20,6 +20,9 @@ public class LifeStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag != "Player") {
+            return;
+        }
         CancelInvoke("takeDamage");
         InvokeRepeating("takeHealth", .5f, 0.3f);
     }
@@ -28,6 +31,10 @@ public class LifeStation : MonoBehaviour
     //Для здоровья (OnTriggerEnter) аналогично
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag != "Player")
+        {
+            return;
+        }
         CancelInvoke("takeHealth");
         InvokeRepeating("takeDamage", .5f, 1f);
     }
