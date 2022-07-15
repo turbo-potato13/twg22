@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LaserGun : MonoBehaviour
@@ -10,11 +11,18 @@ public class LaserGun : MonoBehaviour
     private float shotRateTimeStamp;
     public GameObject shotPrefab;
 
+
+    // public void Awake()
+    // {
+    //     throw new NotImplementedException();
+    // }
+
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             shoot();
+            
         }
     }
 
