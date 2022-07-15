@@ -7,7 +7,7 @@ public class TaskManager : MonoBehaviour
     public GameObject tasks;
     public List<Task> tasksList;
     public FirstPersonDog firstPerson;
-
+    public GameObject awakePanel;
     public void Awake()
     {
         firstPerson = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonDog>();
@@ -21,6 +21,10 @@ public class TaskManager : MonoBehaviour
 
     void OnGUI()
     {
+        if (Input.anyKey)
+        {
+            awakePanel.SetActive(false);
+        }
         if (Input.GetKey(KeyCode.Z))
         {
             tasks.SetActive(true);
