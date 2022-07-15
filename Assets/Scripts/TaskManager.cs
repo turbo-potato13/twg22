@@ -25,14 +25,6 @@ public class TaskManager : MonoBehaviour
         if (Input.anyKey)
         {
             awakePanel.SetActive(false);
-            for (int i = 1; i < (tasksList.Count - 1); i++)
-            {
-                if (!tasksList[i].image.IsActive())
-                {
-                    break;
-                }
-                SceneManager.LoadScene("GameOk");
-            }
         }
         if (Input.GetKey(KeyCode.Z))
         {

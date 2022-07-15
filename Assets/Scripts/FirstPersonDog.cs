@@ -33,7 +33,7 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            if (currentHealth < 1 )
+            if (currentHealth < 1)
             {
                 gameObject.GetComponent<FirstPersonController>().enabled = false;
                 Cursor.lockState = CursorLockMode.None;
@@ -94,6 +94,8 @@ namespace DefaultNamespace
                 countItems = inventory[item.itemType] + 1;
                 inventory[item.itemType] = countItems;
             }
+
+            checkSuccessGame();
         }
 
         public bool tryGetItem(Item item)
@@ -120,6 +122,26 @@ namespace DefaultNamespace
         {
             Gun.SetActive(true);
             Muzzle.SetActive(true);
+        }
+
+        public void checkSuccessGame()
+        {
+            int countGun;
+            int countFilter;
+            int countSunPanel;
+            int countGarden;
+            inventory.TryGetValue(Item.ItemType.Gun, out countGun);
+            inventory.TryGetValue(Item.ItemType.Filter, out countFilter);
+            inventory.TryGetValue(Item.ItemType.SunPanel, out countSunPanel);
+            inventory.TryGetValue(Item.ItemType.Garden, out countGarden);
+            bool gun = countGun >= 1;
+            bool filter = countFilter >= 5;
+            bool sunPanel = countSunPanel >= 4;
+            bool Garden = countGarden >= 1;
+            if (gun && filter && sunPanel && Garden)
+            {
+                SceneManager.LoadScene("GameOk");
+            }
         }
     }
 }
