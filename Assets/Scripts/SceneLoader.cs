@@ -18,4 +18,10 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    public void loadPrologue()
+    {
+        SceneManager.LoadScene("Prologue");
+
+    }
 }
